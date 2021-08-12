@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function NasaPhotoData(props) {
-  console.log(props);
+  //   console.log(props);
   return (
     <div className="container">
       <h1>TEST PHOTO DATA</h1>

@@ -6,21 +6,21 @@ import NasaPhotoData from "./Components/NasaPhotoData";
 
 function App() {
   //create state
-  const [photoData, setPhotoData] = useState(null);
+  const [data, setData] = useState("");
   //get the data from the api
   useEffect(() => {
     const API_KEY = "sLgye0aQOmUTPTBi7PaqGPh2USJB2u5Qk4LF2g0S";
     axios
       .get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
       .then(res => {
-        // console.log(res);
-        // console.log(res.data);
-        setPhotoData(res.data);
+        console.log("RESDATA:", res.data);
+        setData(res.data);
       })
       .catch(err => {
         console.error(err);
       });
   }, []);
+  console.log("DATA IN STATE!!!", data);
   return (
     <div className="App">
       <p>
@@ -31,8 +31,8 @@ function App() {
         </span>
         !
       </p>
-      <NasaPhoto photoData={photoData} />
-      <NasaPhotoData photoData={photoData} />
+      <NasaPhoto imageUrl={data.url} imgCopyright={data.copyright} />
+      <NasaPhotoData data={data} />
     </div>
   );
 }
