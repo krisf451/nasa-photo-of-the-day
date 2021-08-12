@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function NasaPhoto(props) {
-  console.log("PROPS IN NASAPHOTO", props);
+  //   console.log("PROPS IN NASAPHOTO", props);
   const { imageUrl, imgCopyright } = props;
   //   console.log(props.copyright);
 
