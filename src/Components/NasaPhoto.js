@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import styles from "styled-components";
 
 export default function NasaPhoto(props) {
   //   console.log("PROPS IN NASAPHOTO", props);

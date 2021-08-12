@@ -7,11 +7,14 @@ import NasaPhotoData from "./Components/NasaPhotoData";
 function App() {
   //create state
   const [data, setData] = useState("");
+  const [date, setDate] = useState("2021-08-12");
   //get the data from the api
   useEffect(() => {
     const API_KEY = "sLgye0aQOmUTPTBi7PaqGPh2USJB2u5Qk4LF2g0S";
     axios
-      .get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
+      .get(
+        `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${date}`
+      )
       .then(res => {
         // console.log("RESDATA:", res.data);
         setData(res.data);
