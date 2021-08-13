@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import NasaNav from "./Components/NasaNav";
+import NasaHeader from "./Components/NasaHeader";
 import NasaPhoto from "./Components/NasaPhoto";
 import NasaPhotoData from "./Components/NasaPhotoData";
+import NasaCarousel from "./Components/NasaCarousel";
 
 function App() {
   //create state
@@ -26,14 +29,9 @@ function App() {
   // console.log("DATA IN STATE!!!", data);
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun{" "}
-        <span role="img" aria-label="go!">
-          🚀
-        </span>
-        !
-      </p>
+      <NasaNav />
+      <NasaHeader />
+      <NasaCarousel imageUrl={data.url} />
       <NasaPhoto imageUrl={data.url} imgCopyright={data.copyright} />
       <NasaPhotoData data={data} />
     </div>

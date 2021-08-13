@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function NasaPhotoData(props) {
-  console.log(props.data);
+  // console.log(props.data);
 
   //get data from app
   //date/copyright/explanation/hdurl
